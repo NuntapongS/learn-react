@@ -1,7 +1,9 @@
 import { useState } from "react";
-import ButtonCount from "../components/button";
+import ButtonCount from "../components/Countbutton";
+import { useNavigate } from "react-router-dom";
 
 const CountNumber = () => {
+  const navigate = useNavigate();
   const [count, setCount] = useState(0);
   return (
     <>
@@ -20,6 +22,24 @@ const CountNumber = () => {
             disabled={count === 0}
           />
         </div>
+      </div>
+      <div className="flex justify-between mx-80 mt-16">
+        <button
+          className="justify-center items-center bg-black text-white rounded-lg h-11 w-36"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          next
+        </button>
+        <button
+          className="justify-center items-center bg-black text-white rounded-lg h-11 w-36"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          back
+        </button>
       </div>
     </>
   );
