@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import CountNumber from "./pages/countNumber";
+import SecondPage from "./pages/secondPage";
 
 const route = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const route = createBrowserRouter([
   {
     path: "/count-number",
     element: <CountNumber />,
+  },
+  {
+    path: "/second-page",
+    element: <SecondPage />,
   },
 ]);
 
