@@ -28,7 +28,7 @@ const CountNumber = () => {
         <NavigateButton
           message={"Next"}
           OnClick={() => {
-            navigate("/");
+            navigate("/second-page");
           }}
         />
         <NavigateButton
