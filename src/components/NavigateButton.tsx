@@ -7,7 +7,7 @@ type NavigateButtonProps = {
 const NavigateButton = (props: NavigateButtonProps) => {
   return (
     <button
-      className="justify-center items-center bg-black text-white rounded-lg h-11 w-36"
+      className={styleButton()}
       onClick={props.OnClick}
       disabled={props.disabled}
     >
