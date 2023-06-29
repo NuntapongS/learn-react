@@ -1,6 +1,6 @@
 import * as buttonCount from "../../components/Countbutton";
 
-describe("button count", () => {
+describe("count button", () => {
   test("user should see background button is black and text white", () => {
     const actual = buttonCount.styleButton();
     expect(actual).toBe(
