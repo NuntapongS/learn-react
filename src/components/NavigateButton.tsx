@@ -16,4 +16,8 @@ const NavigateButton = (props: NavigateButtonProps) => {
   );
 };
 
+export const styleButton = () => {
+  return "justify-center items-center bg-black text-white rounded-lg h-11 w-36";
+};
+
 export default NavigateButton;
