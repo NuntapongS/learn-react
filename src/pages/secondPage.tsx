@@ -6,13 +6,19 @@ const SecondPage = () => {
 
   return (
     <>
-      <div>This page is temp.</div>
-      <NavigateButton
-        message={"Back"}
-        OnClick={() => {
-          navigate("/count-number");
-        }}
-      />
+      <div className="flex justify-center">This page is temp 2.</div>
+      <div className="flex justify-between mx-80 mt-16">
+        <NavigateButton
+          message={"Next"}
+          OnClick={() => {
+            navigate("/third-page");
+          }}
+        />
+        <NavigateButton
+          message={"Back"}
+          OnClick={() => navigate("/count-number")}
+        />
+      </div>
     </>
   );
 };
