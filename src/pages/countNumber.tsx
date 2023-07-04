@@ -31,7 +31,7 @@ const CountNumber = () => {
             navigate("/second-page");
           }}
         />
-        <NavigateButton message={"Back"} disabled={true} />
+        <NavigateButton message={"Back"} disabled={true} opacity={0.5} />
       </div>
     </>
   );
