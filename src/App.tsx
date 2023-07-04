@@ -6,6 +6,7 @@ import {
 import "./App.css";
 import CountNumber from "./pages/countNumber";
 import SecondPage from "./pages/secondPage";
+import ThirdPage from "./pages/thirdPage";
 
 const route = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const route = createBrowserRouter([
     path: "/second-page",
     element: <SecondPage />,
   },
+  { path: "/third-page", element: <ThirdPage /> },
 ]);
 
 function App() {
