@@ -19,6 +19,17 @@ const SecondPage = () => {
           {name}
         </button>
       </div>
+
+      <div className="flex justify-center">
+        <button
+          className="flex my-5 h-11 w-40 justify-center items-center bg-black text-white"
+          onClick={() => {
+            setText("Thank you");
+          }}
+        >
+          {text}
+        </button>
+      </div>
       <div className="flex justify-between mx-80 mt-16">
         <NavigateButton
           message={"Next"}
@@ -30,17 +41,6 @@ const SecondPage = () => {
           message={"Back"}
           OnClick={() => navigate("/count-number")}
         />
-      </div>
-
-      <div className="flex justify-center">
-        <button
-          className="flex my-5 h-11 w-40 justify-center items-center bg-black text-white"
-          onClick={() => {
-            setText("Thank you");
-          }}
-        >
-          {text}
-        </button>
       </div>
     </>
   );
