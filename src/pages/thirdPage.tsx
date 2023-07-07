@@ -2,16 +2,21 @@ import { useNavigate } from "react-router-dom";
 import NavigateButton from "../components/NavigateButton";
 import { useEffect, useState } from "react";
 
+interface Items {
+  id: number;
+  name: string;
+}
+
 const ThirdPage = () => {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
   const [resource, setResource] = useState("posts");
-  const [items, setItems] = useState();
+  const [items, setItems] = useState<Items>({ id: 0, name: "" });
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${count}`)
       .then((res) => res.json())
-      .then((items) => setItems(items));
+      .then(setItems);
   }, [count]);
 
   console.log(items);
@@ -58,7 +63,10 @@ const ThirdPage = () => {
         </div>
       </div>
 
-      <div className="flex justify-center"></div>
+      <div className="my-10">
+        <div className="flex justify-center">Id : {items && items.id}</div>
+        <div className="flex justify-center">Name : {items && items.name}</div>
+      </div>
 
       <div className="flex justify-between mx-80 mt-16">
         {
