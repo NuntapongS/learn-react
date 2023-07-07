@@ -5,18 +5,31 @@ import { useEffect, useState } from "react";
 interface Items {
   id: number;
   name: string;
+  username: string;
+  email: string;
+  address: {
+    street?: string;
+  };
 }
 
 const ThirdPage = () => {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
   const [resource, setResource] = useState("posts");
-  const [items, setItems] = useState<Items>({ id: 0, name: "" });
+  const [items, setItems] = useState<Items>({
+    id: 0,
+    name: "",
+    username: "",
+    email: "",
+    address: {
+      street: "",
+    },
+  });
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${count}`)
       .then((res) => res.json())
-      .then(setItems);
+      .then((data) => setItems(data));
   }, [count]);
 
   console.log(items);
@@ -50,7 +63,6 @@ const ThirdPage = () => {
         </button>
       </div>
       <h1 className="flex justify-center">{resource}</h1>
-
       <div className="flex item-center justify-center">
         <div className="flex items-center justify-center h-11 w-36 mt-16 bg-black text-white">
           <button
@@ -63,9 +75,16 @@ const ThirdPage = () => {
         </div>
       </div>
 
-      <div className="my-10">
-        <div className="flex justify-center">Id : {items && items.id}</div>
-        <div className="flex justify-center">Name : {items && items.name}</div>
+      <div className="flex flex-col justify-center items-center my-10">
+        <div>id: {items.id}</div>
+        <div>name: {items.name}</div>
+        <div>username: {items.username}</div>
+        <div>email: {items.email}</div>
+        {items.address && items.address.street ? (
+          <div>address: {items.address.street}</div>
+        ) : (
+          <div>address: N/A</div>
+        )}
       </div>
 
       <div className="flex justify-between mx-80 mt-16">
