@@ -8,7 +8,15 @@ interface Items {
   username: string;
   email: string;
   address: {
+    city?: string;
     street?: string;
+    suite?: string;
+    zipcode?: string;
+  };
+  company?: {
+    name?: string;
+    catchPhrase?: string;
+    bs?: string;
   };
 }
 
@@ -22,7 +30,15 @@ const ThirdPage = () => {
     username: "",
     email: "",
     address: {
+      city: "",
       street: "",
+      suite: "",
+      zipcode: "",
+    },
+    company: {
+      name: "",
+      catchPhrase: "",
+      bs: "",
     },
   });
 
@@ -76,14 +92,25 @@ const ThirdPage = () => {
       </div>
 
       <div className="flex flex-col justify-center items-center my-10">
-        <div>id: {items.id}</div>
-        <div>name: {items.name}</div>
-        <div>username: {items.username}</div>
-        <div>email: {items.email}</div>
-        {items.address && items.address.street ? (
-          <div>address: {items.address.street}</div>
+        <div>Id: {items.id}</div>
+        <div>Name: {items.name}</div>
+        <div>Username: {items.username}</div>
+        <div>Email: {items.email}</div>
+        {items.address && items.address.city ? (
+          <div>
+            Address: {items.address.city} , {items.address.street} ,{" "}
+            {items.address.suite} , {items.address.zipcode} ,
+          </div>
         ) : (
-          <div>address: N/A</div>
+          <div>Address: N/A</div>
+        )}
+        {items.company && items.company.name ? (
+          <div>
+            Company: {items.company.name} , {items.company.catchPhrase} ,{" "}
+            {items.company.bs}
+          </div>
+        ) : (
+          <div>Company: N/A</div>
         )}
       </div>
 
