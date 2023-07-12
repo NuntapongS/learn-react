@@ -6,14 +6,15 @@ const SecondPage = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("Click to set name");
   const [text, setText] = useState("Click Me");
-
+  const [background, setBackground] = useState("bg-black");
   return (
     <>
       <div className="flex justify-center">
         <button
-          className="flex my-5 h-11 w-40 justify-center items-center bg-black text-white"
+          className={`flex my-5 h-11 w-40 justify-center items-center ${background} text-white`}
           onClick={() => {
             setName("Nuntapong");
+            setBackground("bg-red-500");
           }}
         >
           {name}
