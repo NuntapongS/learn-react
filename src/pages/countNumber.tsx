@@ -27,7 +27,7 @@ const CountNumber = () => {
       <div className="flex justify-between mx-80 mt-16">
         <NavigateButton
           message={"Next"}
-          OnClick={() => {
+          onClick={() => {
             navigate("/second-page");
           }}
         />

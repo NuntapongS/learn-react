@@ -60,13 +60,13 @@ const SecondPage = () => {
       <div className="flex justify-between mx-80 mt-16">
         <NavigateButton
           message={"Next"}
-          OnClick={() => {
+          onClick={() => {
             navigate("/third-page");
           }}
         />
         <NavigateButton
           message={"Back"}
-          OnClick={() => navigate("/count-number")}
+          onClick={() => navigate("/count-number")}
         />
       </div>
     </>
