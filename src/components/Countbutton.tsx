@@ -4,14 +4,10 @@ type buttonPropos = {
   disabled?: boolean;
 };
 
-const ButtonCount = (props: buttonPropos) => {
+const ButtonCount = ({ message, onClick, disabled }: buttonPropos) => {
   return (
-    <button
-      className={styleButton()}
-      onClick={props.onClick}
-      disabled={props.disabled}
-    >
-      {props.message}
+    <button className={styleButton()} onClick={onClick} disabled={disabled}>
+      {message}
     </button>
   );
 };

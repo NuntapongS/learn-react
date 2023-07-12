@@ -1,19 +1,24 @@
 type NavigateButtonProps = {
   message: string;
-  OnClick?: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   opacity?: number;
 };
 
-const NavigateButton = (props: NavigateButtonProps) => {
+const NavigateButton = ({
+  message,
+  onClick,
+  disabled,
+  opacity,
+}: NavigateButtonProps) => {
   return (
     <button
       className={styleButton()}
-      onClick={props.OnClick}
-      disabled={props.disabled}
-      style={{ opacity: props.opacity }}
+      onClick={onClick}
+      disabled={disabled}
+      style={{ opacity }}
     >
-      {props.message}
+      {message}
     </button>
   );
 };
