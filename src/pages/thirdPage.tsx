@@ -91,26 +91,54 @@ const ThirdPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center my-10">
-        <div>Id: {items.id}</div>
-        <div>Name: {items.name}</div>
-        <div>Username: {items.username}</div>
-        <div>Email: {items.email}</div>
+      <div className="flex flex-col justify-center my-10 mx-10">
+        <div className="flex">
+          <div className="mr-3 font-bold">Id: </div>
+          <div>{items.id}</div>
+        </div>
+
+        <div className="flex">
+          <div className="mr-3 font-bold">Name: </div>
+          <div>{items.name}</div>
+        </div>
+
+        <div className="flex">
+          <div className="mr-3 font-bold">Username: </div>
+          <div>{items.username}</div>
+        </div>
+
+        <div className="flex">
+          <div className="mr-3 font-bold">Email: </div>
+          <div>{items.email}</div>
+        </div>
+
         {items.address && items.address.city ? (
-          <div>
-            Address: {items.address.city} , {items.address.street} ,{" "}
-            {items.address.suite} , {items.address.zipcode} ,
+          <div className="flex">
+            <div className="mr-3 font-bold">Address:</div>
+            <div>
+              {items.address.street} , {items.address.suite} ,{" "}
+              {items.address.city} , {items.address.zipcode}
+            </div>
           </div>
         ) : (
-          <div>Address: N/A</div>
+          <div className="flex">
+            <div className="mr-3 font-bold">Address: </div>
+            <div>N/A</div>
+          </div>
         )}
         {items.company && items.company.name ? (
-          <div>
-            Company: {items.company.name} , {items.company.catchPhrase} ,{" "}
-            {items.company.bs}
+          <div className="flex">
+            <div className="mr-3 font-bold">Company: </div>
+            <div>
+              {items.company.name} , {items.company.catchPhrase} ,{" "}
+              {items.company.bs}
+            </div>
           </div>
         ) : (
-          <div>Company: N/A</div>
+          <div className="flex">
+            <div className="mr-3 font-bold">Company: </div>
+            <div>N/A</div>
+          </div>
         )}
       </div>
 
