@@ -5,27 +5,39 @@ import { useState } from "react";
 type buttonStyle = {
   background: string;
   textColor: string;
+  isShow: boolean;
 };
 
 const SecondPage = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("Click to set name");
   const [text, setText] = useState("Click Me");
-  const [{ background, textColor }, setButtonStyle] = useState<buttonStyle>({
-    background: "bg-black",
-    textColor: "text-white",
-  });
+  const [{ background, textColor, isShow }, setButtonStyle] =
+    useState<buttonStyle>({
+      background: "bg-black",
+      textColor: "text-white",
+      isShow: false,
+    });
   return (
     <>
       <div className="flex justify-center">
         <button
           className={`flex my-5 h-11 w-40 justify-center items-center ${background} ${textColor}`}
           onClick={() => {
-            setName("Nuntapong");
-            setButtonStyle({
-              background: "bg-red-500",
-              textColor: "text-black",
-            });
+            !isShow ? setName("Nuntapong") : setName("Click to set name");
+            setButtonStyle(
+              !isShow
+                ? {
+                    background: "bg-red-500",
+                    textColor: "text-black",
+                    isShow: true,
+                  }
+                : {
+                    background: "bg-black",
+                    textColor: "text-white",
+                    isShow: false,
+                  }
+            );
           }}
         >
           {name}
