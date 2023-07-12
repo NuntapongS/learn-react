@@ -85,6 +85,7 @@ const ThirdPage = () => {
             onClick={() => {
               setCount(count + 1);
             }}
+            disabled={count === 10}
           >
             count : {count}
           </button>
@@ -146,7 +147,7 @@ const ThirdPage = () => {
         {
           <NavigateButton
             message={"Next"}
-            OnClick={() => {
+            onClick={() => {
               navigate("");
             }}
             disabled={true}
@@ -155,7 +156,7 @@ const ThirdPage = () => {
         }
         <NavigateButton
           message={"Back"}
-          OnClick={() => navigate("/second-page")}
+          onClick={() => navigate("/second-page")}
         />
       </div>
     </>
