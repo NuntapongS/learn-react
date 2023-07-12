@@ -3,6 +3,7 @@ import NavigateButton from "../components/NavigateButton";
 import { useState } from "react";
 
 type buttonStyle = {
+  name: string;
   background: string;
   textColor: string;
   isShow: boolean;
@@ -10,10 +11,11 @@ type buttonStyle = {
 
 const SecondPage = () => {
   const navigate = useNavigate();
-  const [name, setName] = useState("Click to set name");
+
   const [text, setText] = useState("Click Me");
-  const [{ background, textColor, isShow }, setButtonStyle] =
+  const [{ name, background, textColor, isShow }, setButtonStyle] =
     useState<buttonStyle>({
+      name: "Click to set name",
       background: "bg-black",
       textColor: "text-white",
       isShow: false,
@@ -24,15 +26,16 @@ const SecondPage = () => {
         <button
           className={`flex my-5 h-11 w-40 justify-center items-center ${background} ${textColor}`}
           onClick={() => {
-            !isShow ? setName("Nuntapong") : setName("Click to set name");
             setButtonStyle(
               !isShow
                 ? {
+                    name: "Nuntapong",
                     background: "bg-red-500",
                     textColor: "text-black",
                     isShow: true,
                   }
                 : {
+                    name: "Click to set name",
                     background: "bg-black",
                     textColor: "text-white",
                     isShow: false,
