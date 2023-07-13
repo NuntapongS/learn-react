@@ -46,7 +46,7 @@ const ThirdPage = () => {
   });
 
   const onClickSection = (section: string) => {
-    resource === section ? setResource("...") : setResource(section);
+    resource !== section ? setResource(section) : setResource("...");
   };
 
   useEffect(() => {
@@ -63,6 +63,7 @@ const ThirdPage = () => {
         <ButtonSection
           textButton={"Posts"}
           colorActive={"bg-red-500 text-white"}
+          // resource ก่อนกดปุ่มจะเป็น "..."
           onClickSection={() => onClickSection("Posts")}
           isActive={resource === "Posts"}
         />
