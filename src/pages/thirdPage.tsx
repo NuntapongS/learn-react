@@ -82,17 +82,28 @@ const ThirdPage = () => {
       </div>
       <h1 className="flex justify-center">{resource}</h1>
       <div className="flex item-center justify-center">
-        <div className="flex items-center justify-center h-11 w-36 mt-16 bg-black text-white">
-          <ButtonCount
-            message="Count"
-            onClick={() => {
-              setCount(count + 1);
-            }}
-            disabled={count >= 10}
-            opacity={count >= 10 ? 0.5 : 1}
-          />
+        <div className="flex items-center justify-center h-11 w-36 mt-16 ">
+          <div className="flex gap-4">
+            <ButtonCount
+              message="Increase"
+              onClick={() => {
+                setCount(count + 1);
+              }}
+              disabled={count >= 10}
+              opacity={count >= 10 ? 0.5 : 1}
+            />
+            <ButtonCount
+              message="Decrease"
+              onClick={() => {
+                setCount(count - 1);
+              }}
+              disabled={count <= 0}
+              opacity={count <= 0 ? 0.5 : 1}
+            />
+          </div>
         </div>
       </div>
+      <div className="flex justify-center my-6">count: {count}</div>
 
       <div className="flex flex-col justify-center my-10 mx-10">
         <div className="flex">
