@@ -9,10 +9,20 @@ type buttonStyle = {
   isShow: boolean;
 };
 
+type buttonClickMeMessage = {
+  message: string;
+  backgroundMessage: string;
+  textColorMessage: string;
+};
+
 const SecondPage = () => {
   const navigate = useNavigate();
-
-  const [text, setText] = useState("Click Me");
+  const [{ message, backgroundMessage, textColorMessage }, setText] =
+    useState<buttonClickMeMessage>({
+      message: "Click me",
+      backgroundMessage: "bg-black",
+      textColorMessage: "text-white",
+    });
   const [{ name, background, textColor, isShow }, setButtonStyle] =
     useState<buttonStyle>({
       name: "Click to set name",
@@ -49,12 +59,24 @@ const SecondPage = () => {
 
       <div className="flex justify-center">
         <button
-          className="flex my-5 h-11 w-40 justify-center items-center bg-black text-white"
+          className={`flex my-5 h-11 w-40 justify-center items-center ${backgroundMessage} ${textColorMessage}`}
           onClick={() => {
-            setText("Thank you");
+            setText(
+              message === "Click me"
+                ? {
+                    message: "Hello",
+                    backgroundMessage: "bg-red-500",
+                    textColorMessage: "text-black",
+                  }
+                : {
+                    message: "Click me",
+                    backgroundMessage: "bg-black",
+                    textColorMessage: "text-white",
+                  }
+            );
           }}
         >
-          {text}
+          {message}
         </button>
       </div>
       <div className="flex justify-between mx-80 mt-16">
