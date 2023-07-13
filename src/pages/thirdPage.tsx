@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import NavigateButton from "../components/NavigateButton";
 import { useEffect, useState } from "react";
 
+import ButtonCount from "../components/Countbutton";
+
 interface Items {
   id: number;
   name: string;
@@ -81,14 +83,14 @@ const ThirdPage = () => {
       <h1 className="flex justify-center">{resource}</h1>
       <div className="flex item-center justify-center">
         <div className="flex items-center justify-center h-11 w-36 mt-16 bg-black text-white">
-          <button
+          <ButtonCount
+            message="Count"
             onClick={() => {
               setCount(count + 1);
             }}
-            disabled={count === 10}
-          >
-            count : {count}
-          </button>
+            disabled={count >= 10}
+            opacity={count >= 10 ? 0.5 : 1}
+          />
         </div>
       </div>
 

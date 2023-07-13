@@ -1,13 +1,25 @@
+import { useState } from "react";
+
 type buttonPropos = {
   message: string;
   onClick: () => void;
   disabled?: boolean;
+  opacity?: number;
 };
 
-const ButtonCount = ({ message, onClick, disabled }: buttonPropos) => {
+const ButtonCount = ({ message, onClick, disabled, opacity }: buttonPropos) => {
+  const [count, setCount] = useState(0);
   return (
-    <button className={styleButton()} onClick={onClick} disabled={disabled}>
-      {message}
+    <button
+      className={styleButton()}
+      onClick={() => {
+        onClick();
+        setCount(count + 1);
+      }}
+      disabled={disabled}
+      style={{ opacity }}
+    >
+      {message} : {count}
     </button>
   );
 };
