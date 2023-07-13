@@ -3,6 +3,7 @@ import NavigateButton from "../components/NavigateButton";
 import { useEffect, useState } from "react";
 
 import ButtonCount from "../components/Countbutton";
+import ButtonSection from "../components/ButtonSection";
 
 interface Items {
   id: number;
@@ -25,7 +26,7 @@ interface Items {
 const ThirdPage = () => {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
-  const [resource, setResource] = useState("posts");
+  const [resource, setResource] = useState("...");
   const [items, setItems] = useState<Items>({
     id: 0,
     name: "",
@@ -44,6 +45,10 @@ const ThirdPage = () => {
     },
   });
 
+  const onClickSection = (section: string) => {
+    resource === section ? setResource("...") : setResource(section);
+  };
+
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${count}`)
       .then((res) => res.json())
@@ -55,30 +60,24 @@ const ThirdPage = () => {
   return (
     <>
       <div className="flex justify-center gap-6 my-10">
-        <button
-          className="flex my-5 h-11 w-40 justify-center items-center bg-black text-white"
-          onClick={() => {
-            setResource("Posts");
-          }}
-        >
-          Posts
-        </button>
-        <button
-          className="flex my-5 h-11 w-40 justify-center items-center bg-black text-white"
-          onClick={() => {
-            setResource("Users");
-          }}
-        >
-          Users
-        </button>
-        <button
-          className="flex my-5 h-11 w-40 justify-center items-center bg-black text-white"
-          onClick={() => {
-            setResource("Comments");
-          }}
-        >
-          Comments
-        </button>
+        <ButtonSection
+          textButton={"Posts"}
+          colorActive={"bg-red-500 text-white"}
+          onClickSection={() => onClickSection("Posts")}
+          isActive={resource === "Posts"}
+        />
+        <ButtonSection
+          textButton={"Users"}
+          colorActive={"bg-yellow-500 text-white"}
+          onClickSection={() => onClickSection("Users")}
+          isActive={resource === "Users"}
+        />
+        <ButtonSection
+          textButton={"Comments"}
+          colorActive={"bg-green-500 text-white"}
+          onClickSection={() => onClickSection("Comments")}
+          isActive={resource === "Comments"}
+        />
       </div>
       <h1 className="flex justify-center">{resource}</h1>
       <div className="flex item-center justify-center">
