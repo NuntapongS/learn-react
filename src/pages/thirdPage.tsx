@@ -160,11 +160,7 @@ const ThirdPage = () => {
         {
           <NavigateButton
             message={"Next"}
-            onClick={() => {
-              navigate("");
-            }}
-            disabled={true}
-            opacity={0.5}
+            onClick={() => navigate("/fourth-page")}
           />
         }
         <NavigateButton
