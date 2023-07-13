@@ -103,9 +103,9 @@ const ThirdPage = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center my-6">count: {count}</div>
+      <div className="flex justify-center my-14">count: {count}</div>
 
-      <div className="flex flex-col justify-center my-10 mx-10">
+      <div className="flex flex-col justify-center my-28 mx-96">
         <div className="flex">
           <div className="mr-3 font-bold">Id: </div>
           <div>{items.id}</div>
