@@ -7,7 +7,8 @@ const FourthPage = () => {
   const navigate = useNavigate();
   const [resource, setResource] = useState("...");
   const [text, setText] = useState("");
-  const [showText, setShowText] = useState(false);
+
+  const [displayText, setDisplayText] = useState("...");
   return (
     <>
       <div className="flex justify-center gap-6 my-10">
@@ -53,7 +54,8 @@ const FourthPage = () => {
         <button
           className="rounded-lg h-11 w-36 bg-black text-white"
           onClick={() => {
-            setShowText(true);
+            // เอl text ไป set ใน displayText
+            setDisplayText(text);
           }}
           disabled={text === ""}
         >
@@ -63,7 +65,7 @@ const FourthPage = () => {
           className="bg-black text-white rounded-lg h-11 w-36 "
           onClick={() => {
             setText("");
-            setShowText(false);
+            setDisplayText("...");
           }}
         >
           set empty
@@ -71,11 +73,7 @@ const FourthPage = () => {
       </div>
 
       <div className="flex justify-center my-16">
-        {showText === true ? (
-          <h1 className="flex justify-center text-black">Text : {text}</h1>
-        ) : (
-          <h1 className="flex justify-center text-black">Text : ...</h1>
-        )}
+        <h1 className="flex justify-center text-black">Text : {displayText}</h1>
       </div>
 
       <div className="flex justify-between mx-80 mt-16">
