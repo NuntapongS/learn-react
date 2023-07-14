@@ -47,6 +47,7 @@ const FourthPage = () => {
           className="flex bg-black text-white h-10 w-40 pl-2"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          autoFocus
         />
       </div>
 
