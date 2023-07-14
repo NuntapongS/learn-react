@@ -52,6 +52,7 @@ const ThirdPage = () => {
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${count}`)
       .then((res) => res.json())
+      //data : คือข้อมูลที่ได้จากการ fetch ที่เก็บไว้ใน res
       .then((data) => setItems(data));
   }, [count]);
 

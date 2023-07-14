@@ -7,7 +7,6 @@ const FourthPage = () => {
   const navigate = useNavigate();
   const [resource, setResource] = useState("...");
   const [text, setText] = useState("");
-
   const [displayText, setDisplayText] = useState("...");
   return (
     <>
