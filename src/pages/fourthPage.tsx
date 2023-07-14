@@ -48,6 +48,11 @@ const FourthPage = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
           autoFocus
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              setDisplayText(text);
+            }
+          }}
         />
       </div>
 
