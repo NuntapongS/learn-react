@@ -44,6 +44,7 @@ const FourthPage = () => {
       <div className="flex items-center justify-center my-10">
         <input
           className="flex bg-black text-white h-10 w-40 pl-2"
+          value={text}
           onChange={(e) => setText(e.target.value)}
         />
       </div>
