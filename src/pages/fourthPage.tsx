@@ -44,6 +44,7 @@ const FourthPage = () => {
       <div className="flex items-center justify-center my-10">
         <input
           className="flex bg-black text-white h-10 w-40 pl-2"
+          // เอา text มาเก็บใน text
           value={text}
           onChange={(e) => setText(e.target.value)}
           autoFocus
@@ -59,7 +60,7 @@ const FourthPage = () => {
         <button
           className="rounded-lg h-11 w-36 bg-black text-white"
           onClick={() => {
-            // เอl text ไป set ใน displayText
+            // เอา text ไป set ใน displayText
             setDisplayText(text);
           }}
           disabled={text === ""}
