@@ -73,6 +73,7 @@ const FourthPage = () => {
             setText("");
             setDisplayText("...");
           }}
+          disabled={text === ""}
         >
           set empty
         </button>
