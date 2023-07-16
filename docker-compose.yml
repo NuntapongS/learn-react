@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+    learn-react:
+        ports:
+            - 3000:3000
+        container_name: learn-react
+        image: 'learn-react:1.0.0'
