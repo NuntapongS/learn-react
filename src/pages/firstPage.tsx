@@ -3,7 +3,7 @@ import ButtonCount from "../components/Countbutton";
 import { useNavigate } from "react-router-dom";
 import NavigateButton from "../components/NavigateButton";
 
-const CountNumber = () => {
+const FirstPage = () => {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
   return (
@@ -37,4 +37,4 @@ const CountNumber = () => {
   );
 };
 
-export default CountNumber;
+export default FirstPage;

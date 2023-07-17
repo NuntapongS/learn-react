@@ -4,19 +4,19 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import "./App.css";
-import CountNumber from "./pages/countNumber";
 import SecondPage from "./pages/secondPage";
 import ThirdPage from "./pages/thirdPage";
 import FourthPage from "./pages/fourthPage";
+import FirstPage from "./pages/firstPage";
 
 const route = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/count-number" />,
+    element: <Navigate to="/first-page" />,
   },
   {
-    path: "/count-number",
-    element: <CountNumber />,
+    path: "/first-page",
+    element: <FirstPage />,
   },
   {
     path: "/second-page",
